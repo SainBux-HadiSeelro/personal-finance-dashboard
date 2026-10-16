@@ -1,0 +1,9 @@
+2026-10-01,income,Salary,18500000,Monthly Software Engineer Salary
+2026-10-05,income,Freelance,4500000,AI Agent UI Design Contract
+2026-10-02,expense,Bills,2500000,Electricity & High-speed Fiber
+2026-10-03,expense,Food,1800000,Monthly Grocery Shopping
+2026-10-07,expense,Transport,850000,Fuel & Toll Charges
+2026-10-09,expense,Shopping,1200000,Noise Cancelling Headphones
+2026-10-12,expense,Entertainment,600000,Weekend Dinner & Cinema
+2026-10-14,expense,Health,450000,Gym Subscription & Supplements
+2026-10-15,income,Investment,1500000,Stock Dividend Payout

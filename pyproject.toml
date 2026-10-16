@@ -1,0 +1,20 @@
+[project]
+name = "personal-finance-tracker"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "plotly>=7.1.0",
+    "questionary>=2.1.1",
+    "rich>=14.2.0",
+    "streamlit>=1.30.0",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["main"]
+packages = ["features"]

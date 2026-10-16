@@ -1,0 +1,18 @@
+[
+    {
+        "date":"2025-12-11",
+        "type":"income",
+        "category":"Freelance",
+        "amount_paisa":200000,
+        "description":"ai agent maked",
+        "amount":2000.0
+    },
+    {
+        "date":"2025-12-11",
+        "type":"expense",
+        "category":"Food",
+        "amount_paisa":50000,
+        "description":"food hotel",
+        "amount":500.0
+    }
+]
