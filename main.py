@@ -13,7 +13,7 @@ from features.transactions.transactions import add_expense, add_income, list_tra
 from features.budgets.budgets import set_budget, view_budgets
 from features.analytics.analytics import spending_analysis
 from features.smart_assistant.smart_assistant import daily_financial_check
-from features.data_management.data_management import export_transactions_to_csv, export_transactions_to_json
+from features.data_management.data_management import export_transactions_to_csv, export_transactions_to_json, export_transactions_to_pdf
 
 def main():
     """Main function to run the personal finance tracker CLI."""
@@ -62,6 +62,7 @@ def data_management_menu():
         choices=[
             "Export Transactions to CSV",
             "Export Transactions to JSON",
+            "Export Transactions to PDF",
             "Back",
         ],
     ).ask()
@@ -70,6 +71,8 @@ def data_management_menu():
         export_transactions_to_csv()
     elif choice == "Export Transactions to JSON":
         export_transactions_to_json()
+    elif choice == "Export Transactions to PDF":
+        export_transactions_to_pdf()
     elif choice == "Back" or choice is None:
         return
 

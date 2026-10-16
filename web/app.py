@@ -6,6 +6,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+from features.data_management.data_management import generate_pdf_report
 
 # Configure UTF-8 encoding on Windows
 if sys.platform == "win32":
@@ -625,11 +626,11 @@ elif nav == "📁 Data Management":
     st.caption("Export your ledger in standard formats or filter records.")
 
     # Export Buttons
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     with col1:
         csv_data = df_trans.to_csv(index=False).encode('utf-8')
         st.download_button(
-            label="📥 Download Transactions (CSV)",
+            label="📄 Export CSV",
             data=csv_data,
             file_name=f"finance_tracker_{datetime.now().strftime('%Y%m%d')}.csv",
             mime="text/csv",
@@ -641,10 +642,20 @@ elif nav == "📁 Data Management":
         json_copy["date"] = json_copy["date"].dt.strftime("%Y-%m-%d")
         json_str = json_copy.to_json(orient="records", indent=4)
         st.download_button(
-            label="📥 Download Transactions (JSON)",
+            label="📊 Export JSON",
             data=json_str,
             file_name=f"finance_tracker_{datetime.now().strftime('%Y%m%d')}.json",
             mime="application/json",
+            use_container_width=True
+        )
+
+    with col3:
+        pdf_bytes = generate_pdf_report(df_trans)
+        st.download_button(
+            label="📑 Export PDF Report",
+            data=pdf_bytes,
+            file_name=f"finance_statement_{datetime.now().strftime('%Y%m%d')}.pdf",
+            mime="application/pdf",
             use_container_width=True
         )
 
